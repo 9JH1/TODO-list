@@ -1,0 +1,111 @@
+:root {
+  --background: black;
+  --text-color: white;
+  --foreground: rgb(53, 51, 51);
+}
+
+/*
+thank you css.gg
+source https://css.gg/check
+*/
+.gg-check {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(var(--ggs, 1.3));
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-radius: 100px;
+}
+.gg-check::after {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  left: 2.4px;
+  top: -2px;
+  width: 6px;
+  height: 10px;
+  border-width: 0 2px 2px 0;
+  border-style: solid;
+  transform-origin: bottom left;
+  transform: rotate(45deg);
+}
+/*end*/
+
+body {
+  background: var(--background);
+  color: var(--text-color);
+  margin: 0;
+  padding: 10px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  #title {
+    width: 100%;
+    font-weight: 500;
+    margin: 0;
+  }
+  .smol {
+    font-size: 0.9em;
+    color: var(--foreground);
+    padding: 0;
+    margin: 0;
+  }
+  .list {
+    .li {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+      height: 30px;
+      width: 100%;
+      user-select: none;
+      .check {
+        background-color: white;
+        width: 20px;
+        height: 20px;
+        z-index: 100;
+        margin-right: 10px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+      .text-input {
+        width: 100%;
+        height: 20px;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        color: var(--text-color);
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        font-size: 1em;
+        padding: 0;
+      }
+      .text {
+        cursor: pointer;
+        width: 100%;
+      }
+    }
+    .active {
+      .check {
+        background: var(--background);
+        border-radius: 100%;
+      }
+    }
+    .create {
+      width: 100px;
+      height: 20px;
+      background-color: var(--text-color);
+      color: var(--background);
+      text-align: center;
+      border-radius: 5px;
+      user-select: none;
+      margin: 20px 0px;
+      transition: all 0.1s ease-in-out;
+    }
+    .create:active {
+      opacity: 0.6;
+    }
+  }
+}
