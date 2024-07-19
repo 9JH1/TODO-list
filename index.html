@@ -11,7 +11,9 @@
       href="https://cdn0.iconfinder.com/data/icons/rounded-basics/24/svg-rounded_list-512.png"
     />
   </head>
-  <body>
+  <body
+    oncontextmenu="if (event.button == 2) {event.preventDefault();return false;}"
+  >
     <div class="title">
       <h2 id="title">Simple To Do List</h2>
       <p class="smol">left click to edit, right click to remove</p>
