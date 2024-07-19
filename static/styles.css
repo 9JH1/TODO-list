@@ -41,6 +41,9 @@ body {
   *[contenteditable="true"] {
     outline: none;
   }
+  * {
+    background-color: var(--background);
+  }
   .download {
     position: fixed;
     bottom: 0;
