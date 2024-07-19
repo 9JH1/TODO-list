@@ -56,3 +56,32 @@ createButton.addEventListener("click", () => {
 
   ToDoList.append(newToDo);
 });
+
+function renderElementToImage() {
+  let element = document.getElementById("content");
+  const newCanvas = document.createElement("div");
+  newCanvas.innerHTML = element.innerHTML;
+  newCanvas.id = "content-download";
+  document.body.append(newCanvas);
+  newCanvas.getElementsByClassName("create")[0].remove();
+
+  newCanvas.getElementsByClassName("smol")[0].remove();
+  element = newCanvas;
+  html2canvas(element, { scale: 10 }).then(function (canvas) {
+    // Convert canvas to data URL
+    const dataURL = canvas.toDataURL("image/png");
+
+    // Create a download link
+    const downloadLink = document.createElement("a");
+    downloadLink.href = dataURL;
+    downloadLink.download = "TODO-list.png";
+
+    // Append to the body and trigger the download
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+
+    // Clean up
+    document.body.removeChild(downloadLink);
+  });
+  newCanvas.remove();
+}
